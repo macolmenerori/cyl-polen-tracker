@@ -1,0 +1,9 @@
+{
+  "short_name": "Polen Tracker CyL",
+  "name": "Monitor de niveles de polen para Castilla y León",
+  "icons": [],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
