@@ -1,0 +1,8 @@
+{
+  "components": {
+    "upperbar": {
+      "changeLanguage": "Cambiar idioma",
+      "changeTheme": "Tema claro/oscuro"
+    }
+  }
+}
