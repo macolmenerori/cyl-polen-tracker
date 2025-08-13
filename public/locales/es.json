@@ -3,6 +3,10 @@
     "upperbar": {
       "changeLanguage": "Cambiar idioma",
       "changeTheme": "Tema claro/oscuro"
+    },
+    "headerIntro": {
+      "welcome": "Polen Tracker CyL",
+      "description": "Monitor de polen para Castilla y León"
     }
   }
 }

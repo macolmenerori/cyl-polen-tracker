@@ -3,6 +3,10 @@
     "upperbar": {
       "changeLanguage": "Change language",
       "changeTheme": "Light/dark theme"
+    },
+    "headerIntro": {
+      "welcome": "Pollen Tracker CyL",
+      "description": "Pollen monitor for Castilla y León"
     }
   }
 }
