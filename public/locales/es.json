@@ -7,6 +7,12 @@
     "headerIntro": {
       "welcome": "Polen Tracker CyL",
       "description": "Monitor de polen para Castilla y León"
+    },
+    "filterBar": {
+      "title": "Filtros",
+      "station": "Estación",
+      "pollenType": "Tipo de polen",
+      "clear": "Borrar"
     }
   }
 }
