@@ -1,5 +1,6 @@
 import { Stack } from '@mui/material';
 
+import { HeaderIntro } from '@/components/HeaderIntro/HeaderIntro';
 import { UpperBar } from '@/components/UpperBar/UpperBar';
 
 export function MainLayout() {
@@ -9,7 +10,7 @@ export function MainLayout() {
         <UpperBar />
       </header>
       <main>
-        <h1>Main Content</h1>
+        <HeaderIntro />
       </main>
       <footer>
         <p>Footer</p>
