@@ -1,18 +1,22 @@
 {
   "components": {
+    "currentPollenLevels": {
+      "errorCardMessage": "Error loading pollen data.",
+      "selectPollenType": "Select a pollen type to display its levels."
+    },
+    "filterBar": {
+      "clear": "Clear",
+      "pollenType": "Pollen type",
+      "station": "Station",
+      "title": "Filters"
+    },
+    "headerIntro": {
+      "description": "Pollen monitor for Castilla y León",
+      "welcome": "Pollen Tracker CyL"
+    },
     "upperbar": {
       "changeLanguage": "Change language",
       "changeTheme": "Light/dark theme"
-    },
-    "headerIntro": {
-      "welcome": "Pollen Tracker CyL",
-      "description": "Pollen monitor for Castilla y León"
-    },
-    "filterBar": {
-      "title": "Filters",
-      "station": "Station",
-      "pollenType": "Pollen type",
-      "clear": "Clear"
     }
   }
 }

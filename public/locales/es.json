@@ -1,18 +1,22 @@
 {
   "components": {
+    "currentPollenLevels": {
+      "errorCardMessage": "Error al cargar los datos de polen.",
+      "selectPollenType": "Selecciona un tipo de polen para mostrar sus niveles."
+    },
+    "filterBar": {
+      "clear": "Borrar",
+      "pollenType": "Tipo de polen",
+      "station": "Estación",
+      "title": "Filtros"
+    },
+    "headerIntro": {
+      "description": "Monitor de polen para Castilla y León",
+      "welcome": "Polen Tracker CyL"
+    },
     "upperbar": {
       "changeLanguage": "Cambiar idioma",
       "changeTheme": "Tema claro/oscuro"
-    },
-    "headerIntro": {
-      "welcome": "Polen Tracker CyL",
-      "description": "Monitor de polen para Castilla y León"
-    },
-    "filterBar": {
-      "title": "Filtros",
-      "station": "Estación",
-      "pollenType": "Tipo de polen",
-      "clear": "Borrar"
     }
   }
 }
