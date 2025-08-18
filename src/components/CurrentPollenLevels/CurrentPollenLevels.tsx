@@ -4,6 +4,7 @@ import { Container } from '@mui/material';
 import useSWR from 'swr';
 
 import { FilterBar } from '../FilterBar/FilterBar';
+import { LoadingSpinner } from '../LoadingSpinner/LoadingSpinner';
 
 import { fetcherPollenData } from '@/api/pollenApi';
 import { POLLEN_URL } from '@/types/api';
@@ -24,8 +25,7 @@ export function CurrentPollenLevels() {
       <FilterBar pollenType={pollenType} setPollenType={setPollenType} />
       {/* TODO: Please select a pollen type */}
       {pollenType === '' ? <div>Please select a pollen type.</div> : null}
-      {/* TODO: spinner */}
-      {isLoading && <div>Loading...</div>}
+      {isLoading && <LoadingSpinner position="center" />}
       {/* TODO: error card */}
       {error && <div>Error fetching pollen data.</div>}
       {data && (
