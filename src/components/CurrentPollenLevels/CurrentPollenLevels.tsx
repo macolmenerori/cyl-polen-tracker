@@ -7,6 +7,7 @@ import useSWR from 'swr';
 import { ErrorCard } from '../ErrorCard/ErrorCard';
 import { FilterBar } from '../FilterBar/FilterBar';
 import { LoadingSpinner } from '../LoadingSpinner/LoadingSpinner';
+import { PollenMap } from '../PollenMap/PollenMap';
 
 import { fetcherPollenData } from '@/api/pollenApi';
 import { POLLEN_URL } from '@/types/api';
@@ -34,12 +35,7 @@ export function CurrentPollenLevels() {
       ) : null}
       {isLoading && <LoadingSpinner position="center" />}
       {error && <ErrorCard message={t('components.currentPollenLevels.errorCardMessage')} />}
-      {data && (
-        <div>
-          <h2>Pollen Data</h2>
-          <pre>{JSON.stringify(data, null, 2)}</pre>
-        </div>
-      )}
+      {data && <PollenMap pollenApiData={data.results} selectedPollen={pollenType} />}
     </Container>
   );
 }

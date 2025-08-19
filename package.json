@@ -29,13 +29,18 @@
     "@mui/icons-material": "^7.3.1",
     "@mui/material": "^7.3.1",
     "@mui/styled-engine-sc": "^7.3.1",
+    "buffer": "^6.0.3",
+    "dotenv": "^17.2.1",
     "i18next": "^25.3.4",
     "i18next-browser-languagedetector": "^8.2.0",
+    "mapbox-gl": "^3.14.0",
+    "process": "^0.11.10",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "react-i18next": "^15.6.1",
     "styled-components": "^6.1.19",
-    "swr": "^2.3.6"
+    "swr": "^2.3.6",
+    "util": "^0.12.5"
   },
   "devDependencies": {
     "@eslint/js": "^9.33.0",
@@ -44,6 +49,7 @@
     "@testing-library/react": "^16.3.0",
     "@testing-library/user-event": "^14.6.1",
     "@types/jest": "^30.0.0",
+    "@types/mapbox-gl": "^3.4.1",
     "@types/node": "^24.2.1",
     "@types/react": "^19.1.10",
     "@types/react-dom": "^19.1.7",
