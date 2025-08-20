@@ -19,6 +19,9 @@
       "station": "Station",
       "title": "Filters"
     },
+    "footer": {
+      "source": "Source"
+    },
     "headerIntro": {
       "description": "Pollen monitor for Castilla y León",
       "welcome": "Pollen Tracker CyL"

@@ -1,6 +1,7 @@
 import { Stack } from '@mui/material';
 
 import { CurrentPollenLevels } from '@/components/CurrentPollenLevels/CurrentPollenLevels';
+import { FooterComponent } from '@/components/FooterComponent/FooterComponent';
 import { HeaderIntro } from '@/components/HeaderIntro/HeaderIntro';
 import { UpperBar } from '@/components/UpperBar/UpperBar';
 
@@ -15,7 +16,7 @@ export function MainLayout() {
         <CurrentPollenLevels />
       </main>
       <footer>
-        <p>Footer</p>
+        <FooterComponent />
       </footer>
     </Stack>
   );
