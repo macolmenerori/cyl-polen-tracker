@@ -19,6 +19,9 @@
       "station": "Estación",
       "title": "Filtros"
     },
+    "footer": {
+      "source": "Fuente"
+    },
     "headerIntro": {
       "description": "Monitor de polen para Castilla y León",
       "welcome": "Polen Tracker CyL"
