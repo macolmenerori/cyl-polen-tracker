@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import { Box, Chip, Paper, Typography } from '@mui/material';
 import mapboxgl from 'mapbox-gl';
@@ -25,6 +26,8 @@ export function PollenMap({ pollenApiData, selectedPollen }: PollenMapProps) {
     province: data.estaciones,
     level: data.prevision_proximos_dias
   }));
+
+  const { t } = useTranslation();
 
   const mapContainer = useRef<HTMLDivElement>(null);
   const map = useRef<mapboxgl.Map | null>(null);
@@ -63,7 +66,7 @@ export function PollenMap({ pollenApiData, selectedPollen }: PollenMapProps) {
       container: mapContainer.current,
       style: 'mapbox://styles/mapbox/light-v11',
       center: [-5.5, 41.8], // Center on Castilla y León
-      zoom: 7,
+      zoom: 6,
       projection: 'mercator'
     });
 
@@ -72,10 +75,10 @@ export function PollenMap({ pollenApiData, selectedPollen }: PollenMapProps) {
 
       if (!map.current) return;
 
-      // Add Spanish administrative boundaries source
+      // Add Spanish provinces GeoJSON source
       map.current.addSource('spain-provinces', {
-        type: 'vector',
-        url: 'mapbox://mapbox.boundaries-adm2-v3'
+        type: 'geojson',
+        data: '/data/CyL_Boundaries.geojson'
       });
 
       // Add province fill layer
@@ -83,27 +86,21 @@ export function PollenMap({ pollenApiData, selectedPollen }: PollenMapProps) {
         id: 'provinces-fill',
         type: 'fill',
         source: 'spain-provinces',
-        'source-layer': 'boundaries_admin_2',
         filter: [
-          'all',
-          ['==', ['get', 'admin_level'], 2],
-          ['==', ['get', 'iso_3166_1'], 'ES'],
+          'in',
+          ['upcase', ['get', 'name']],
           [
-            'in',
-            ['upcase', ['get', 'name']],
+            'literal',
             [
-              'literal',
-              [
-                'ÁVILA',
-                'BURGOS',
-                'LEÓN',
-                'PALENCIA',
-                'SALAMANCA',
-                'SEGOVIA',
-                'SORIA',
-                'VALLADOLID',
-                'ZAMORA'
-              ]
+              'ÁVILA',
+              'BURGOS',
+              'LEÓN',
+              'PALENCIA',
+              'SALAMANCA',
+              'SEGOVIA',
+              'SORIA',
+              'VALLADOLID',
+              'ZAMORA'
             ]
           ]
         ],
@@ -147,99 +144,27 @@ export function PollenMap({ pollenApiData, selectedPollen }: PollenMapProps) {
         id: 'provinces-border',
         type: 'line',
         source: 'spain-provinces',
-        'source-layer': 'boundaries_admin_2',
         filter: [
-          'all',
-          ['==', ['get', 'admin_level'], 2],
-          ['==', ['get', 'iso_3166_1'], 'ES'],
+          'in',
+          ['upcase', ['get', 'name']],
           [
-            'in',
-            ['upcase', ['get', 'name']],
+            'literal',
             [
-              'literal',
-              [
-                'ÁVILA',
-                'BURGOS',
-                'LEÓN',
-                'PALENCIA',
-                'SALAMANCA',
-                'SEGOVIA',
-                'SORIA',
-                'VALLADOLID',
-                'ZAMORA'
-              ]
+              'ÁVILA',
+              'BURGOS',
+              'LEÓN',
+              'PALENCIA',
+              'SALAMANCA',
+              'SEGOVIA',
+              'SORIA',
+              'VALLADOLID',
+              'ZAMORA'
             ]
           ]
         ],
         paint: {
           'line-color': '#ffffff',
           'line-width': 1
-        }
-      });
-
-      // Add hover effects
-      let hoveredProvinceId: string | null = null;
-
-      map.current.on('mousemove', 'provinces-fill', (e) => {
-        if (!map.current) return;
-
-        if (e.features && e.features.length > 0) {
-          if (hoveredProvinceId) {
-            map.current.setFeatureState(
-              {
-                source: 'spain-provinces',
-                sourceLayer: 'boundaries_admin_2',
-                id: hoveredProvinceId
-              },
-              { hover: false }
-            );
-          }
-
-          hoveredProvinceId = e.features[0].id as string;
-          map.current.setFeatureState(
-            { source: 'spain-provinces', sourceLayer: 'boundaries_admin_2', id: hoveredProvinceId },
-            { hover: true }
-          );
-
-          // Change cursor to pointer
-          map.current.getCanvas().style.cursor = 'pointer';
-
-          // Show popup with province info
-          const provinceName = e.features[0].properties?.name;
-          const pollenLevel = pollenLevelMap.get(provinceName?.toUpperCase());
-
-          new mapboxgl.Popup()
-            .setLngLat(e.lngLat)
-            .setHTML(
-              `
-              <div style="font-family: Arial, sans-serif;">
-                <strong>${provinceName}</strong><br/>
-                ${selectedPollen}: <span style="color: ${getColorForLevel(pollenLevel)}; font-weight: bold;">
-                  ${pollenLevel || 'No data'}
-                </span>
-              </div>
-            `
-            )
-            .addTo(map.current);
-        }
-      });
-
-      map.current.on('mouseleave', 'provinces-fill', () => {
-        if (!map.current) return;
-
-        if (hoveredProvinceId) {
-          map.current.setFeatureState(
-            { source: 'spain-provinces', sourceLayer: 'boundaries_admin_2', id: hoveredProvinceId },
-            { hover: false }
-          );
-        }
-        hoveredProvinceId = null;
-        map.current.getCanvas().style.cursor = '';
-
-        // Remove popup
-        const popups = document.getElementsByClassName('mapboxgl-popup');
-        if (popups.length) {
-          popups[0].remove();
         }
       });
     });
@@ -292,7 +217,7 @@ export function PollenMap({ pollenApiData, selectedPollen }: PollenMapProps) {
   }, [pollenData, pollenLevelMap, mapLoaded]);
 
   return (
-    <Box sx={{ width: '100%', height: '600px', position: 'relative' }}>
+    <Box sx={{ width: '100%', height: '600px', position: 'relative', marginTop: 3 }}>
       <Paper elevation={3} sx={{ height: '100%', overflow: 'hidden' }}>
         {/* Map container */}
         <div
@@ -316,27 +241,27 @@ export function PollenMap({ pollenApiData, selectedPollen }: PollenMapProps) {
             minWidth: 150
           }}
         >
-          <Typography variant="subtitle2" gutterBottom>
-            {selectedPollen} Levels
+          <Typography variant="body1" textAlign="center" color="black" gutterBottom>
+            {`${t('components.currentPollenLevels.map.legend.levels')}: ${selectedPollen}`}
           </Typography>
           <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
             <Chip
-              label="High"
+              label={t('components.currentPollenLevels.map.legend.high')}
               size="small"
               sx={{ backgroundColor: '#ef4444', color: 'white', fontSize: '0.75rem' }}
             />
             <Chip
-              label="Medium"
+              label={t('components.currentPollenLevels.map.legend.moderate')}
               size="small"
               sx={{ backgroundColor: '#eab308', color: 'white', fontSize: '0.75rem' }}
             />
             <Chip
-              label="Low"
+              label={t('components.currentPollenLevels.map.legend.low')}
               size="small"
               sx={{ backgroundColor: '#22c55e', color: 'white', fontSize: '0.75rem' }}
             />
             <Chip
-              label="No data"
+              label={t('components.currentPollenLevels.map.legend.nodata')}
               size="small"
               sx={{ backgroundColor: '#9ca3af', color: 'white', fontSize: '0.75rem' }}
             />
