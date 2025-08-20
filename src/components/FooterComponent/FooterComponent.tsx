@@ -47,6 +47,7 @@ export function FooterComponent() {
         target="_blank"
         rel="noopener"
         sx={{ display: 'flex', alignItems: 'center' }}
+        data-testid="github-link"
       >
         <GitHubIcon sx={{ color: 'text.primary' }} />
       </Link>
