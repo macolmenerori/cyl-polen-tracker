@@ -2,6 +2,15 @@
   "components": {
     "currentPollenLevels": {
       "errorCardMessage": "Error loading pollen data.",
+      "map": {
+        "legend": {
+          "high": "High",
+          "levels": "Levels",
+          "low": "Low",
+          "moderate": "Moderate",
+          "nodata": "No data"
+        }
+      },
       "selectPollenType": "Select a pollen type to display its levels."
     },
     "filterBar": {

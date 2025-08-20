@@ -1,4 +1,7 @@
 const path = require('path');
+const webpack = require('webpack'); // Add this import
+const dotenv = require('dotenv').config();
+
 const prod = process.env.NODE_ENV === 'production';
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -90,6 +93,11 @@ module.exports = {
     extensions: ['.tsx', '.ts', '.js', '.jsx', '.json'],
     alias: {
       '@': path.resolve(__dirname, 'src')
+    },
+    fallback: {
+      process: require.resolve('process/browser'),
+      util: require.resolve('util/'),
+      buffer: require.resolve('buffer/')
     }
   },
   optimization: {
@@ -132,6 +140,14 @@ module.exports = {
   devtool: prod ? false : 'source-map',
   plugins: [
     new CleanWebpackPlugin(),
+    new webpack.DefinePlugin({
+      'process.env': JSON.stringify(process.env)
+    }),
+    // Provide polyfills for Node.js globals
+    new webpack.ProvidePlugin({
+      process: 'process/browser',
+      Buffer: ['buffer', 'Buffer']
+    }),
     new HtmlWebpackPlugin({
       template: 'public/index.html',
       minify: prod

@@ -17,11 +17,13 @@ export enum PollenType {
   POPULUS = 'Populus'
 }
 
+export type LevelType = 'ALTO' | 'BAJO' | 'MODERADO';
+
 export type PollenApiResult = {
   fecha: string;
   ano: string;
   estaciones: Stations;
   tipos_polinicos: string;
-  precedentes_ultimos_dias: string;
-  prevision_proximos_dias: string;
+  precedentes_ultimos_dias: LevelType;
+  prevision_proximos_dias: LevelType;
 };

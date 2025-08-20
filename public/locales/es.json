@@ -2,6 +2,15 @@
   "components": {
     "currentPollenLevels": {
       "errorCardMessage": "Error al cargar los datos de polen.",
+      "map": {
+        "legend": {
+          "high": "Alto",
+          "levels": "Niveles",
+          "low": "Bajo",
+          "moderate": "Moderado",
+          "nodata": "Sin datos"
+        }
+      },
       "selectPollenType": "Selecciona un tipo de polen para mostrar sus niveles."
     },
     "filterBar": {
