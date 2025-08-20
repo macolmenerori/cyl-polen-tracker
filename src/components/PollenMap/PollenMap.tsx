@@ -65,7 +65,7 @@ export function PollenMap({ pollenApiData, selectedPollen }: PollenMapProps) {
     map.current = new mapboxgl.Map({
       container: mapContainer.current,
       style: 'mapbox://styles/mapbox/light-v11',
-      center: [-5.5, 41.8], // Center on Castilla y León
+      center: [-5, 41.8], // Center on Castilla y León
       zoom: 6,
       projection: 'mercator'
     });
@@ -175,6 +175,7 @@ export function PollenMap({ pollenApiData, selectedPollen }: PollenMapProps) {
         map.current = null;
       }
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   // Update map colors when pollen data changes

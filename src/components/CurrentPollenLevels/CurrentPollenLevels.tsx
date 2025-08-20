@@ -14,7 +14,7 @@ import { POLLEN_URL } from '@/types/api';
 import { PollenType } from '@/types/pollen';
 
 export function CurrentPollenLevels() {
-  const [pollenType, setPollenType] = useState<PollenType | ''>('');
+  const [pollenType, setPollenType] = useState<PollenType | ''>(PollenType.PLANTAGO);
 
   const { t } = useTranslation();
 

@@ -1,9 +1,8 @@
 import { useTranslation } from 'react-i18next';
 
-import { Clear, ClearAll } from '@mui/icons-material';
+import { Clear } from '@mui/icons-material';
 import {
   Box,
-  Button,
   FormControl,
   IconButton,
   InputAdornment,
@@ -23,14 +22,8 @@ interface FilterBarProps {
 export function FilterBar({ pollenType, setPollenType }: FilterBarProps) {
   const { t } = useTranslation();
 
-  const hasActiveFilters = pollenType !== '';
-
   const handleClearPollenType = (event: React.MouseEvent) => {
     event.stopPropagation();
-    setPollenType('');
-  };
-
-  const handleClearAllFilters = () => {
     setPollenType('');
   };
 
@@ -38,7 +31,9 @@ export function FilterBar({ pollenType, setPollenType }: FilterBarProps) {
     <Stack direction="row" spacing={3} alignItems="center" marginTop={5} justifyContent="center">
       <Box sx={{ minWidth: 250 }}>
         <FormControl fullWidth>
-          <InputLabel id="pollen-select-label">{t('components.filterBar.pollenType')}</InputLabel>
+          <InputLabel id="pollen-select-label" sx={{ color: 'text.tertiary' }}>
+            {t('components.filterBar.pollenType')}
+          </InputLabel>
           <Select
             labelId="pollen-select-label"
             id="pollen-select"
@@ -53,6 +48,7 @@ export function FilterBar({ pollenType, setPollenType }: FilterBarProps) {
                     onClick={handleClearPollenType}
                     onMouseDown={(e) => e.preventDefault()}
                     sx={{ marginRight: 1 }}
+                    data-testid="clear-pollen-type-button"
                   >
                     <Clear fontSize="small" />
                   </IconButton>
@@ -70,16 +66,6 @@ export function FilterBar({ pollenType, setPollenType }: FilterBarProps) {
           </Select>
         </FormControl>
       </Box>
-      <Button
-        variant="outlined"
-        size="small"
-        startIcon={<ClearAll />}
-        onClick={handleClearAllFilters}
-        sx={{ whiteSpace: 'nowrap' }}
-        disabled={!hasActiveFilters}
-      >
-        {t('components.filterBar.clear')}
-      </Button>
     </Stack>
   );
 }
