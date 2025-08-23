@@ -5,10 +5,7 @@
     <link rel="icon" href="./favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Monitor de niveles de polen para Castilla y León."
-    />
+    <meta name="description" content="Monitor de niveles de polen para Castilla y León." />
     <!-- Icons -->
     <!--
       manifest.json provides metadata used when your web app is installed on a
@@ -24,6 +21,47 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
+    <!-- DATADOG -->
+    <script>
+      (function (h, o, u, n, d) {
+        h = h[d] = h[d] || {
+          q: [],
+          onReady: function (c) {
+            h.q.push(c);
+          }
+        };
+        d = o.createElement(u);
+        d.async = 1;
+        d.src = n;
+        n = o.getElementsByTagName(u)[0];
+        n.parentNode.insertBefore(d, n);
+      })(
+        window,
+        document,
+        'script',
+        'https://www.datadoghq-browser-agent.com/eu1/v6/datadog-rum.js',
+        'DD_RUM'
+      );
+      window.DD_RUM.onReady(function () {
+        window.DD_RUM.init({
+          clientToken: 'pubc73cb2806877f5529f0bfde4b2b0562b',
+          applicationId: '95fc1002-a969-43c4-953b-5a0dae6e1d8d',
+          // `site` refers to the Datadog site parameter of your organization
+          // see https://docs.datadoghq.com/getting_started/site/
+          site: 'datadoghq.eu',
+          service: 'cyl-polen-tracker',
+          env: 'prod',
+          // Specify a version number to identify the deployed version of your application in Datadog
+          version: '1.0.0',
+          sessionSampleRate: 100,
+          sessionReplaySampleRate: 20,
+          trackUserInteractions: true,
+          trackResources: true,
+          trackLongTasks: true,
+          defaultPrivacyLevel: 'allow'
+        });
+      });
+    </script>
     <title>Polen Tracker CyL</title>
   </head>
   <body>
