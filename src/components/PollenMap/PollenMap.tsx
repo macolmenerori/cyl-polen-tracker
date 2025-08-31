@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { Box, Chip, Paper, Typography } from '@mui/material';
+import { Box, Paper, Typography } from '@mui/material';
 import mapboxgl from 'mapbox-gl';
 
 // Import Mapbox CSS
@@ -218,57 +218,121 @@ export function PollenMap({ pollenApiData, selectedPollen }: PollenMapProps) {
   }, [pollenData, pollenLevelMap, mapLoaded]);
 
   return (
-    <Box sx={{ width: '100%', height: '600px', position: 'relative', marginTop: 3 }}>
-      <Paper elevation={3} sx={{ height: '100%', overflow: 'hidden' }}>
-        {/* Map container */}
-        <div
-          ref={mapContainer}
-          style={{
-            width: '100%',
-            height: '100%'
-          }}
-        />
-
-        {/* Legend */}
-        <Box
+    <Box sx={{ px: { xs: 2, md: 0 }, py: 2 }}>
+      <Box sx={{ width: '100%', height: '600px', position: 'relative' }}>
+        <Paper
+          elevation={0}
           sx={{
-            position: 'absolute',
-            top: 16,
-            right: 16,
-            backgroundColor: 'rgba(255, 255, 255, 0.95)',
-            padding: 2,
-            borderRadius: 1,
-            boxShadow: 2,
-            minWidth: 150
+            height: '100%',
+            overflow: 'hidden',
+            borderRadius: 3,
+            border: '1px solid',
+            borderColor: 'divider',
+            boxShadow: '0 10px 25px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)'
           }}
         >
-          <Typography variant="body1" textAlign="center" color="black" gutterBottom>
-            {`${t('components.currentPollenLevels.map.legend.levels')}: ${selectedPollen}`}
-          </Typography>
-          <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
-            <Chip
-              label={t('components.currentPollenLevels.map.legend.high')}
-              size="small"
-              sx={{ backgroundColor: '#ef4444', color: 'white', fontSize: '0.75rem' }}
-            />
-            <Chip
-              label={t('components.currentPollenLevels.map.legend.moderate')}
-              size="small"
-              sx={{ backgroundColor: '#eab308', color: 'white', fontSize: '0.75rem' }}
-            />
-            <Chip
-              label={t('components.currentPollenLevels.map.legend.low')}
-              size="small"
-              sx={{ backgroundColor: '#22c55e', color: 'white', fontSize: '0.75rem' }}
-            />
-            <Chip
-              label={t('components.currentPollenLevels.map.legend.nodata')}
-              size="small"
-              sx={{ backgroundColor: '#9ca3af', color: 'white', fontSize: '0.75rem' }}
-            />
-          </Box>
-        </Box>
-      </Paper>
+          {/* Map container */}
+          <div
+            ref={mapContainer}
+            style={{
+              width: '100%',
+              height: '100%'
+            }}
+          />
+
+          {/* Enhanced Legend */}
+          <Paper
+            elevation={0}
+            sx={{
+              position: 'absolute',
+              top: 20,
+              right: 20,
+              backgroundColor: 'rgba(255, 255, 255, 0.95)',
+              backdropFilter: 'blur(10px)',
+              padding: 3,
+              borderRadius: 2,
+              border: '1px solid rgba(0, 0, 0, 0.1)',
+              minWidth: 180,
+              boxShadow: '0 4px 12px rgba(0, 0, 0, 0.15)'
+            }}
+          >
+            <Typography
+              variant="subtitle1"
+              textAlign="center"
+              color="text.primary"
+              gutterBottom
+              sx={{
+                fontWeight: 600,
+                mb: 2
+              }}
+            >
+              {selectedPollen}
+            </Typography>
+            <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1.5 }}>
+              <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5 }}>
+                <Box
+                  sx={{
+                    width: 16,
+                    height: 16,
+                    backgroundColor: '#ef4444',
+                    borderRadius: '50%',
+                    flexShrink: 0,
+                    boxShadow: '0 2px 4px rgba(239, 68, 68, 0.3)'
+                  }}
+                />
+                <Typography variant="body2" sx={{ fontWeight: 500 }}>
+                  {t('components.currentPollenLevels.map.legend.high')}
+                </Typography>
+              </Box>
+              <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5 }}>
+                <Box
+                  sx={{
+                    width: 16,
+                    height: 16,
+                    backgroundColor: '#eab308',
+                    borderRadius: '50%',
+                    flexShrink: 0,
+                    boxShadow: '0 2px 4px rgba(234, 179, 8, 0.3)'
+                  }}
+                />
+                <Typography variant="body2" sx={{ fontWeight: 500 }}>
+                  {t('components.currentPollenLevels.map.legend.moderate')}
+                </Typography>
+              </Box>
+              <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5 }}>
+                <Box
+                  sx={{
+                    width: 16,
+                    height: 16,
+                    backgroundColor: '#22c55e',
+                    borderRadius: '50%',
+                    flexShrink: 0,
+                    boxShadow: '0 2px 4px rgba(34, 197, 94, 0.3)'
+                  }}
+                />
+                <Typography variant="body2" sx={{ fontWeight: 500 }}>
+                  {t('components.currentPollenLevels.map.legend.low')}
+                </Typography>
+              </Box>
+              <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5 }}>
+                <Box
+                  sx={{
+                    width: 16,
+                    height: 16,
+                    backgroundColor: '#9ca3af',
+                    borderRadius: '50%',
+                    flexShrink: 0,
+                    boxShadow: '0 2px 4px rgba(156, 163, 175, 0.3)'
+                  }}
+                />
+                <Typography variant="body2" sx={{ fontWeight: 500 }}>
+                  {t('components.currentPollenLevels.map.legend.nodata')}
+                </Typography>
+              </Box>
+            </Box>
+          </Paper>
+        </Paper>
+      </Box>
     </Box>
   );
 }

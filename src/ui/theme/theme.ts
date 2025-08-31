@@ -4,101 +4,140 @@ import { createTheme, Theme } from '@mui/material/styles';
 // Define the color palette for light mode
 export const lightPalette = {
   primary: {
-    main: '#1976d2',
-    light: '#42a5f5',
-    dark: '#1565c0',
+    main: '#4f46e5',
+    light: '#818cf8',
+    dark: '#3730a3',
     contrastText: '#ffffff'
   },
   secondary: {
-    main: '#9c27b0',
-    light: '#ba68c8',
-    dark: '#7b1fa2',
+    main: '#10b981',
+    light: '#34d399',
+    dark: '#047857',
     contrastText: '#ffffff'
   },
   background: {
-    default: '#f5f5f5',
+    default: '#f8fafc',
     paper: '#ffffff'
   },
   text: {
-    primary: '#000000',
-    secondary: '#f5f5f5',
-    tertiary: '#595959',
-    disabled: '#000000'
+    primary: '#1e293b',
+    secondary: '#64748b',
+    tertiary: '#94a3b8',
+    disabled: '#cbd5e1'
   }
 };
 
 // Define the color palette for dark mode
 export const darkPalette = {
   primary: {
-    main: '#90caf9',
-    light: '#e3f2fd',
-    dark: '#42a5f5',
-    contrastText: 'rgba(0, 0, 0, 0.87)'
+    main: '#6366f1',
+    light: '#8b5cf6',
+    dark: '#4338ca',
+    contrastText: '#ffffff'
   },
   secondary: {
-    main: '#ce93d8',
-    light: '#f3e5f5',
-    dark: '#ab47bc',
-    contrastText: 'rgba(0, 0, 0, 0.87)'
+    main: '#14b8a6',
+    light: '#2dd4bf',
+    dark: '#0f766e',
+    contrastText: '#ffffff'
   },
   background: {
-    default: '#002266',
-    paper: '#003399'
+    default: '#0f172a',
+    paper: '#1e293b'
   },
   text: {
-    primary: '#ffffff',
-    secondary: 'rgba(255, 255, 255, 0.7)',
-    tertiary: 'rgba(255, 255, 255, 0.7)',
-    disabled: 'rgba(255, 255, 255, 0.5)'
+    primary: '#f1f5f9',
+    secondary: '#cbd5e1',
+    tertiary: '#94a3b8',
+    disabled: '#64748b'
   }
 };
 
 // Common theme settings regardless of light/dark mode
 export const commonThemeSettings = {
   typography: {
-    fontFamily: ['Roboto', 'Arial', 'sans-serif'].join(','),
+    fontFamily: [
+      '-apple-system',
+      'BlinkMacSystemFont',
+      '"Segoe UI"',
+      'Roboto',
+      '"Helvetica Neue"',
+      'Arial',
+      'sans-serif'
+    ].join(','),
     h1: {
-      fontSize: '2.5rem',
-      fontWeight: 500
+      fontSize: '3rem',
+      fontWeight: 700,
+      lineHeight: 1.2,
+      letterSpacing: '-0.02em'
     },
     h2: {
-      fontSize: '2rem',
-      fontWeight: 500
+      fontSize: '2.25rem',
+      fontWeight: 600,
+      lineHeight: 1.3,
+      letterSpacing: '-0.01em'
     },
     h3: {
-      fontSize: '1.75rem',
-      fontWeight: 500
+      fontSize: '1.875rem',
+      fontWeight: 600,
+      lineHeight: 1.3
     },
     h4: {
       fontSize: '1.5rem',
-      fontWeight: 500
+      fontWeight: 600,
+      lineHeight: 1.4
     },
     h5: {
       fontSize: '1.25rem',
-      fontWeight: 500
+      fontWeight: 500,
+      lineHeight: 1.4
     },
     h6: {
       fontSize: '1rem',
-      fontWeight: 500
+      fontWeight: 500,
+      lineHeight: 1.5
+    },
+    body1: {
+      fontSize: '1rem',
+      lineHeight: 1.6
+    },
+    body2: {
+      fontSize: '0.875rem',
+      lineHeight: 1.5
     }
   },
   shape: {
-    borderRadius: 8
+    borderRadius: 12
   },
   components: {
     MuiButton: {
       styleOverrides: {
         root: {
           textTransform: 'none' as const,
-          borderRadius: 8,
-          padding: '8px 16px'
+          borderRadius: 12,
+          padding: '10px 20px',
+          fontWeight: 500,
+          boxShadow: 'none',
+          '&:hover': {
+            boxShadow: '0 4px 12px rgba(0, 0, 0, 0.15)'
+          }
         }
       }
     },
-    MuiAppBar: {
+    MuiPaper: {
       styleOverrides: {
         root: {
-          boxShadow: '0px 2px 4px rgba(0, 0, 0, 0.1)'
+          boxShadow: '0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)'
+        }
+      }
+    },
+    MuiCard: {
+      styleOverrides: {
+        root: {
+          boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+          '&:hover': {
+            boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)'
+          }
         }
       }
     }

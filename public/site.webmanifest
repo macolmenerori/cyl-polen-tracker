@@ -4,8 +4,8 @@
   "description": "Monitor de niveles de polen para Castilla y León.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#ffffff",
-  "theme_color": "#000000",
+  "background_color": "#4f46e5",
+  "theme_color": "#4f46e5",
   "icons": [
     {
       "src": "/icons/web-app-manifest-192x192.png",
