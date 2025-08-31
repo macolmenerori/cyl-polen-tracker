@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { Container, Typography } from '@mui/material';
+import { alpha, Box, Paper, Typography, useTheme } from '@mui/material';
 import useSWR from 'swr';
 
 import { ErrorCard } from '../ErrorCard/ErrorCard';
@@ -15,8 +15,8 @@ import { PollenType } from '@/types/pollen';
 
 export function CurrentPollenLevels() {
   const [pollenType, setPollenType] = useState<PollenType | ''>(PollenType.PLANTAGO);
-
   const { t } = useTranslation();
+  const theme = useTheme();
 
   const { data, error, isLoading } = useSWR(
     pollenType !== ''
@@ -26,16 +26,39 @@ export function CurrentPollenLevels() {
   );
 
   return (
-    <Container>
+    <Box>
       <FilterBar pollenType={pollenType} setPollenType={setPollenType} />
+
       {pollenType === '' ? (
-        <Typography margin={4} textAlign="center" fontStyle="italic">
-          {`${t('components.currentPollenLevels.selectPollenType')}`}
-        </Typography>
-      ) : null}
-      {isLoading && <LoadingSpinner position="center" />}
-      {error && <ErrorCard message={t('components.currentPollenLevels.errorCardMessage')} />}
-      {data && <PollenMap pollenApiData={data.results} selectedPollen={pollenType} />}
-    </Container>
+        <Paper
+          elevation={0}
+          sx={{
+            p: 6,
+            textAlign: 'center',
+            background: `linear-gradient(145deg, ${alpha(theme.palette.secondary.main, 0.05)}, ${alpha(theme.palette.primary.main, 0.05)})`,
+            border: `1px solid ${alpha(theme.palette.primary.main, 0.1)}`,
+            borderRadius: 3,
+            mx: { xs: 2, md: 0 }
+          }}
+        >
+          <Typography
+            variant="h6"
+            sx={{
+              color: 'text.secondary',
+              fontStyle: 'italic',
+              fontWeight: 400
+            }}
+          >
+            {t('components.currentPollenLevels.selectPollenType')}
+          </Typography>
+        </Paper>
+      ) : (
+        <>
+          {isLoading && <LoadingSpinner position="center" />}
+          {error && <ErrorCard message={t('components.currentPollenLevels.errorCardMessage')} />}
+          {data && <PollenMap pollenApiData={data.results} selectedPollen={pollenType} />}
+        </>
+      )}
+    </Box>
   );
 }
