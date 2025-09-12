@@ -39,8 +39,8 @@ importers:
         specifier: ^8.2.0
         version: 8.2.0
       mapbox-gl:
-        specifier: ^3.14.0
-        version: 3.14.0
+        specifier: ^3.15.0
+        version: 3.15.0
       process:
         specifier: ^0.11.10
         version: 0.11.10
@@ -3517,8 +3517,8 @@ packages:
   makeerror@1.0.12:
     resolution: {integrity: sha512-JmqCvUhmt43madlpFzG4BQzG2Z3m6tvQDNKdClZnO3VbIudJYmxsT0FNJMeiB2+JTSlTQTSbU8QdesVmwJcmLg==}
 
-  mapbox-gl@3.14.0:
-    resolution: {integrity: sha512-KYhi9ZOQL4BB0J061admPH8O5ZZhhxsyiJ6DQCOkCaps0JEB4HF3SbJwu8S0pJKaQUxNS33sSbzW8iDSSauHPQ==}
+  mapbox-gl@3.15.0:
+    resolution: {integrity: sha512-I42ffZpiXwt0PG3PO6gMYQnoz+AInkirLe/+zoHjcfBTFoFkKYtu5gFwT1WGeSvNrVTqG2Bwp9zUjPw0PFGY+w==}
 
   martinez-polygon-clipping@0.7.4:
     resolution: {integrity: sha512-jBEwrKtA0jTagUZj2bnmb4Yg2s4KnJGRePStgI7bAVjtcipKiF39R4LZ2V/UT61jMYWrTcBhPazexeqd6JAVtw==}
@@ -9153,7 +9153,7 @@ snapshots:
     dependencies:
       tmpl: 1.0.5
 
-  mapbox-gl@3.14.0:
+  mapbox-gl@3.15.0:
     dependencies:
       '@mapbox/jsonlint-lines-primitives': 2.0.2
       '@mapbox/mapbox-gl-supported': 3.0.0
