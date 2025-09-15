@@ -247,7 +247,7 @@ export function PollenMap({ pollenApiData, selectedPollen }: PollenMapProps) {
               position: 'absolute',
               top: 20,
               right: 20,
-              backgroundColor: 'rgba(255, 255, 255, 0.95)',
+
               backdropFilter: 'blur(10px)',
               padding: 3,
               borderRadius: 2,
