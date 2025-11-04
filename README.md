@@ -6,7 +6,7 @@ Check it out at [cylpolentracker.miguelangelcolmenero.es](cylpolentracker.miguel
 
 ## Requirements
 
-- [Node JS](https://nodejs.org/en) `>22.11`
+- [Node JS](https://nodejs.org/en) `>24.0`
 - [PNPM](https://pnpm.io/installation) `>10.0`
 - [Mapbox Token](https://docs.mapbox.com/help/dive-deeper/access-tokens/)
 

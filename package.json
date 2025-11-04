@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Polen level tracker for Castilla y Leon (Spain)",
   "engines": {
-    "node": ">=22.11.0"
+    "node": ">=24.0.0"
   },
   "type": "module",
   "author": "macolmenerori",
