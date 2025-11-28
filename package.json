@@ -51,7 +51,7 @@
     "@types/jest": "^30.0.0",
     "@types/mapbox-gl": "^3.4.1",
     "@types/node": "^24.10.1",
-    "@types/react": "^19.2.6",
+    "@types/react": "^19.2.7",
     "@types/react-dom": "^19.2.3",
     "autoprefixer": "^10.4.22",
     "clean-webpack-plugin": "^4.0.0",
