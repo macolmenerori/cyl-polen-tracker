@@ -8,8 +8,9 @@ This is a React/TypeScript web application for tracking pollen levels in Castill
 
 ## Development Commands
 
-- **Development server**: `pnpm start` (runs on port 3000)
-- **Build**: `pnpm build` (production build)
+- **Development server**: `pnpm start` or `pnpm dev` (Vite dev server on port 3000)
+- **Build**: `pnpm build` (TypeScript check + Vite production build)
+- **Preview**: `pnpm preview` (preview production build locally on port 3000)
 - **Test**: `pnpm test` (Jest tests)
 - **Linting**: `pnpm lint` (ESLint with auto-fix)
 - **Formatting**: `pnpm prettify` (Prettier formatting)
@@ -46,14 +47,15 @@ This is a React/TypeScript web application for tracking pollen levels in Castill
 - **Mapping**: Mapbox GL JS with custom province boundaries (CyL_Boundaries.geojson)
 - **Data fetching**: SWR
 - **Styling**: Material-UI + styled-components + Emotion
-- **Build**: Webpack with custom configuration
+- **Build**: Vite with React plugin and TypeScript support
 - **Testing**: Jest + React Testing Library
 - **Package manager**: pnpm
 
 ## Important Notes
 
-- Mapbox token required in environment variables (`MAPBOX_TOKEN`)
+- Mapbox token required in environment variables (`VITE_MAPBOX_TOKEN` in `.env`)
 - Uses path aliases (`@/*` maps to `src/*`)
 - Supports Spanish and English localization
 - Province data comes from static GeoJSON file in `public/data/`
-- Webpack configured for both development and production builds with code splitting
+- Build output directory: `dist/` (Vite default)
+- Vite serves `public/` directory at root in both dev and production

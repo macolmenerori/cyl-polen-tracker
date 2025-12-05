@@ -41,6 +41,16 @@ if (!HTMLFormElement.prototype.requestSubmit) {
   };
 }
 
+// Mock import.meta.env for Vite environment variables
+Object.defineProperty(global, 'import.meta', {
+  value: {
+    env: {
+      VITE_MAPBOX_TOKEN: 'test-mock-token'
+    }
+  },
+  writable: true
+});
+
 interface ExtendedRenderOptions {
   theme?: 'light' | 'dark';
   lng?: string; // Allow overriding language for specific tests

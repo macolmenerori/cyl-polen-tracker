@@ -46,4 +46,4 @@ For feature-testing and development.
 
 1. Edit the file `.example.env` with all the parameters, then rename it to `.env`
 2. Install packages `pnpm i`
-3. Run the dev environment `pnpm start`
+3. Run the dev environment `pnpm dev`

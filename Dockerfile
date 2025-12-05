@@ -8,6 +8,7 @@ WORKDIR /usr/app
 
 COPY src src
 COPY public public
+COPY index.html index.html
 COPY package.json package.json
 COPY pnpm-lock.yaml pnpm-lock.yaml
 COPY .prettierrc .prettierrc
@@ -15,7 +16,8 @@ COPY .prettierignore .prettierignore
 COPY eslint.config.js eslint.config.js
 COPY jest.config.ts jest.config.ts
 COPY tsconfig.json tsconfig.json
-COPY webpack.config.cjs webpack.config.cjs
+COPY vite.config.ts vite.config.ts
+COPY postcss.config.js postcss.config.js
 
 RUN pnpm i --frozen-lockfile
 RUN pnpm build
