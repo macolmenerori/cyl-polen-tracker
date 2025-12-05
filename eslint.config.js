@@ -116,13 +116,13 @@ export default tseslint.config(
   {
     ignores: [
       'node_modules/**',
-      'build/**',
+      'dist/**',
       'types/**',
       '.DS_Store',
       '.env',
       '.env.*',
       '.github/**',
-      'webpack.config.js'
+      'vite.config.ts'
     ]
   }
 );

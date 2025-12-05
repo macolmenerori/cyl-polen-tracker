@@ -9,7 +9,7 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 
 import { LevelType, PollenApiResult } from '@/types/pollen';
 
-mapboxgl.accessToken = process.env.MAPBOX_TOKEN;
+mapboxgl.accessToken = import.meta.env.VITE_MAPBOX_TOKEN;
 
 interface PollenMapProps {
   pollenApiData: PollenApiResult[];
