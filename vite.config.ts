@@ -33,10 +33,18 @@ export default defineConfig(({ mode }) => {
       },
       rollupOptions: {
         output: {
-          manualChunks: {
-            'react-vendor': ['react', 'react-dom'],
-            'mui-vendor': ['@mui/material', '@mui/icons-material'],
-            'map-vendor': ['mapbox-gl']
+          // Use function-based manualChunks to avoid SSR external module conflicts
+          manualChunks: (id) => {
+            // Only apply chunking for node_modules during client build
+            if (id.includes('node_modules')) {
+              if (id.includes('@mui/material') || id.includes('@mui/icons-material')) {
+                return 'mui-vendor';
+              }
+              if (id.includes('mapbox-gl')) {
+                return 'map-vendor';
+              }
+            }
+            return undefined;
           }
         }
       },
@@ -47,6 +55,14 @@ export default defineConfig(({ mode }) => {
 
     optimizeDeps: {
       include: ['react', 'react-dom', 'mapbox-gl', '@mui/material']
+    },
+
+    ssr: {
+      noExternal: ['react-helmet-async']
+    },
+
+    ssgOptions: {
+      formatting: 'minify'
     }
   };
 });

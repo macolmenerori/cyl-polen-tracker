@@ -8,8 +8,8 @@ This is a React/TypeScript web application for tracking pollen levels in Castill
 
 ## Development Commands
 
-- **Development server**: `pnpm start` or `pnpm dev` (Vite dev server on port 3000)
-- **Build**: `pnpm build` (TypeScript check + Vite production build)
+- **Development server**: `pnpm dev` (SSG-enabled dev server on port 3000)
+- **Build**: `pnpm build` (generates sitemap, TypeScript check, SSG build)
 - **Preview**: `pnpm preview` (preview production build locally on port 3000)
 - **Test**: `pnpm test` (Jest tests)
 - **Linting**: `pnpm lint` (ESLint with auto-fix)
@@ -30,6 +30,8 @@ This is a React/TypeScript web application for tracking pollen levels in Castill
 - **CurrentPollenLevels**: Main data display component with filters and map
 - **FilterBar**: Pollen type selection component
 - **ThemeToggle/LanguageSwitcher**: User preference controls
+- **SEOHead**: SEO meta tags management with react-helmet-async
+- **JsonLd**: JSON-LD structured data for search engines
 
 ### State Management
 - Uses React hooks and context for state management
@@ -47,9 +49,38 @@ This is a React/TypeScript web application for tracking pollen levels in Castill
 - **Mapping**: Mapbox GL JS with custom province boundaries (CyL_Boundaries.geojson)
 - **Data fetching**: SWR
 - **Styling**: Material-UI + styled-components + Emotion
-- **Build**: Vite with React plugin and TypeScript support
+- **Build**: Vite with vite-react-ssg for Static Site Generation
+- **SEO**: react-helmet-async for meta tags management
 - **Testing**: Jest + React Testing Library
 - **Package manager**: pnpm
+
+## Static Site Generation (SSG)
+
+The application uses **vite-react-ssg** to pre-render static HTML for improved SEO and faster initial page load.
+
+### SSG Architecture
+- **Entry point**: `src/index.tsx` uses `ViteReactSSG` from `vite-react-ssg/single-page`
+- **Mode**: Single-page SSG (no routing)
+- **Default language**: Spanish (pre-rendered), English available via client-side switching
+
+### SSR Guards
+Browser-dependent features are protected with `typeof window !== 'undefined'` checks:
+- `src/ui/theme/ThemeContext.tsx` - localStorage and window.matchMedia guards
+- `src/i18n.ts` - LanguageDetector only used in browser, Spanish forced during SSG
+
+### SEO Components
+- **SEOHead** (`src/components/SEO/SEOHead.tsx`): Meta tags, Open Graph, Twitter Cards, canonical URLs, hreflang alternates
+- **JsonLd** (`src/components/SEO/JsonLd.tsx`): Structured data (WebSite, BreadcrumbList schemas)
+
+### SEO Static Files
+- `public/robots.txt` - Search engine crawling directives
+- `public/sitemap.xml` - XML sitemap with language alternates (auto-updated on build)
+- `scripts/generate-sitemap.ts` - Updates sitemap lastmod timestamp before each build
+
+### Build Output
+- Pre-rendered HTML with Spanish content
+- Client-side JavaScript bundles for interactivity
+- Static deployment ready (CDN compatible)
 
 ## Important Notes
 
@@ -59,3 +90,4 @@ This is a React/TypeScript web application for tracking pollen levels in Castill
 - Province data comes from static GeoJSON file in `public/data/`
 - Build output directory: `dist/` (Vite default)
 - Vite serves `public/` directory at root in both dev and production
+- SSR/SSG guards required when using browser APIs (localStorage, window.matchMedia)

@@ -16,9 +16,15 @@ const resources = {
   }
 };
 
-i18next.use(LanguageDetector).use(initReactI18next).init({
+// SSR/SSG Guard: Only use LanguageDetector in browser
+if (typeof window !== 'undefined') {
+  i18next.use(LanguageDetector);
+}
+
+i18next.use(initReactI18next).init({
   resources,
-  fallbackLng: 'en' // Default language english
+  fallbackLng: 'es', // Default language Spanish
+  lng: typeof window === 'undefined' ? 'es' : undefined // Force Spanish during SSG
 });
 
 export default i18next;
