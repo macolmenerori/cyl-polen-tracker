@@ -1,0 +1,9 @@
+# robots.txt for CyL Polen Tracker
+# Allow all search engines to crawl the site
+
+User-agent: *
+Allow: /
+Crawl-delay: 1
+
+# Sitemap location
+Sitemap: https://cylpolentracker.miguelangelcolmenero.es/sitemap.xml

@@ -1,13 +1,15 @@
-import { Suspense } from 'react';
-import ReactDOM from 'react-dom/client';
+import { StrictMode, Suspense } from 'react';
+
+import { ViteReactSSG } from 'vite-react-ssg/single-page';
 
 import './i18n.ts';
 
 import { App } from './App';
 
-const root = ReactDOM.createRoot(document.getElementById('root')!);
-root.render(
-  <Suspense fallback={<p>Loading...</p>}>
-    <App />
-  </Suspense>
+export const createRoot = ViteReactSSG(
+  <StrictMode>
+    <Suspense fallback={<p>Loading...</p>}>
+      <App />
+    </Suspense>
+  </StrictMode>
 );
