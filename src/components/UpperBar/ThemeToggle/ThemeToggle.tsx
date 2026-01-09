@@ -1,20 +1,23 @@
-import { useTranslation } from 'react-i18next';
+import { ThemeSwitch } from '@macolmenerori/component-library/theme-switch';
 
-import Brightness4Icon from '@mui/icons-material/Brightness4'; // Dark mode icon
-import Brightness7Icon from '@mui/icons-material/Brightness7'; // Light mode icon
-import { IconButton, Tooltip } from '@mui/material';
+import '@macolmenerori/component-library/theme-switch-css';
 
 import { useTheme } from '@/ui/theme/ThemeContext';
 
 export function ThemeToggle() {
   const { mode, toggleTheme } = useTheme();
-  const { t } = useTranslation();
+
+  const handleSetEnableDarkMode = (_value: boolean) => {
+    toggleTheme();
+  };
 
   return (
-    <Tooltip title={t('components.upperbar.changeTheme')} data-testid="theme-toggle">
-      <IconButton onClick={toggleTheme} color="inherit">
-        {mode === 'light' ? <Brightness4Icon /> : <Brightness7Icon />}
-      </IconButton>
-    </Tooltip>
+    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+      <ThemeSwitch
+        enableDarkMode={mode === 'dark'}
+        setEnableDarkMode={handleSetEnableDarkMode}
+        size="small"
+      />
+    </div>
   );
 }

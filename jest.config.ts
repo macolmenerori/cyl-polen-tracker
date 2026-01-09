@@ -6,6 +6,8 @@ const config: Config.InitialOptions = {
   setupFilesAfterEnv: ['<rootDir>/src/test/setupTests.tsx'],
   moduleNameMapper: {
     '\\.(css|less|scss|sass)$': 'identity-obj-proxy',
+    '^@macolmenerori/component-library/theme-switch-css$':
+      '<rootDir>/src/test/__mocks__/styleMock.js',
     '^@/(.*)$': '<rootDir>/src/$1'
   },
   transform: {
