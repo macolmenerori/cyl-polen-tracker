@@ -17,6 +17,9 @@ importers:
       '@fontsource/roboto':
         specifier: ^5.2.9
         version: 5.2.9
+      '@macolmenerori/component-library':
+        specifier: ^1.1.1
+        version: 1.1.1(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
       '@mui/icons-material':
         specifier: ^7.3.6
         version: 7.3.6(@mui/material@7.3.6(@emotion/react@11.14.0(@types/react@19.2.7)(react@19.2.3))(@emotion/styled@11.14.1(@emotion/react@11.14.0(@types/react@19.2.7)(react@19.2.3))(@types/react@19.2.7)(react@19.2.3))(@types/react@19.2.7)(react-dom@19.2.3(react@19.2.3))(react@19.2.3))(@types/react@19.2.7)(react@19.2.3)
@@ -1233,6 +1236,20 @@ packages:
 
   '@jridgewell/trace-mapping@0.3.9':
     resolution: {integrity: sha512-3Belt6tdc8bPgAtbcmdtNJlirVoTmEb5e2gC94PnkwEW9jI6CAHUeoG85tjWP5WquqfavoMtMwiG4P926ZKKuQ==}
+
+  '@macolmenerori/component-library@1.1.1':
+    resolution: {integrity: sha512-1A124OqcQ4kcYPbLNbazZVyn/ygRby0BrI9bl9uvrUnwlBKflPduWR+TkSbBWXmUU5HiHX7n7TP5WHKLy0hswQ==}
+    engines: {node: '>=24.0.0 <25.0.0'}
+    peerDependencies:
+      react: ^18.0.0 || ^19.0.0
+      react-dom: ^18.0.0 || ^19.0.0
+      react-markdown: ^10.0.0
+      remark-gfm: ^4.0.0
+    peerDependenciesMeta:
+      react-markdown:
+        optional: true
+      remark-gfm:
+        optional: true
 
   '@mapbox/jsonlint-lines-primitives@2.0.2':
     resolution: {integrity: sha512-rY0o9A5ECsTQRVhv7tL/OyDpGAoUB4tTvLiW1DSzQGq4bvTPhNw1VpSNjDJc5GFZ2XuyOtSWSVN05qOtcD71qQ==}
@@ -5446,6 +5463,11 @@ snapshots:
     dependencies:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.5
+
+  '@macolmenerori/component-library@1.1.1(react-dom@19.2.3(react@19.2.3))(react@19.2.3)':
+    dependencies:
+      react: 19.2.3
+      react-dom: 19.2.3(react@19.2.3)
 
   '@mapbox/jsonlint-lines-primitives@2.0.2': {}
 
