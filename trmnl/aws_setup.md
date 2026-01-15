@@ -221,3 +221,9 @@ To prevent too many requests and avoid possible costs, API Gateway Throttling sh
 ### Caching
 
 For the use I'm going to give to this API, only 4 to 6 times calls will be handled each day. Thus, no caching makes sense here. But if the API starts getting more and more requests, it would be a good idea to implement caching with API Gateway. Keep in mind caching causes costs, so it only makes sense when there is heavy traffic.
+
+## Next step: monitoring
+
+Once the API is set up and running, it is very important to monitor it.
+
+Check out the [aws_metrics.md](aws_metrics.md) file to find out the most relevant metrics, how to set up alarms and how to set up a dashboard.
