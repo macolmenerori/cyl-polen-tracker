@@ -1,5 +1,3 @@
-import path from 'path';
-
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import viteTsconfigPaths from 'vite-tsconfig-paths';
@@ -55,22 +53,12 @@ export default defineConfig(({ mode }) => {
 
     publicDir: 'public',
 
-    resolve: {
-      alias: {
-        // Workaround for library CSS export mismatch
-        '@macolmenerori/component-library/theme-switch-css': path.resolve(
-          __dirname,
-          'node_modules/@macolmenerori/component-library/dist/component-library.css'
-        )
-      }
-    },
-
     optimizeDeps: {
       include: ['react', 'react-dom', 'mapbox-gl', '@mui/material']
     },
 
     ssr: {
-      noExternal: ['react-helmet-async']
+      noExternal: ['react-helmet-async', '@macolmenerori/component-library']
     },
 
     ssgOptions: {
