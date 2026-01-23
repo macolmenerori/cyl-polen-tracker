@@ -7,7 +7,7 @@ import { useTheme } from '@/ui/theme/ThemeContext';
 export function ThemeToggle() {
   const { mode, toggleTheme } = useTheme();
 
-  const handleSetEnableDarkMode = (_value: boolean) => {
+  const handleSetEnableDarkMode = () => {
     toggleTheme();
   };
 
