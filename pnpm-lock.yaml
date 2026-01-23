@@ -36,8 +36,8 @@ importers:
         specifier: ^8.2.0
         version: 8.2.0
       mapbox-gl:
-        specifier: ^3.17.0
-        version: 3.17.0
+        specifier: ^3.18.1
+        version: 3.18.1
       react:
         specifier: ^19.2.3
         version: 19.2.3
@@ -3195,11 +3195,11 @@ packages:
   makeerror@1.0.12:
     resolution: {integrity: sha512-JmqCvUhmt43madlpFzG4BQzG2Z3m6tvQDNKdClZnO3VbIudJYmxsT0FNJMeiB2+JTSlTQTSbU8QdesVmwJcmLg==}
 
-  mapbox-gl@3.17.0:
-    resolution: {integrity: sha512-nCrDKRlr5di6xUksUDslNWwxroJ5yv1hT8pyVFtcpWJOOKsYQxF/wOFTMie8oxMnXeFkrz1Tl1TwA1XN1yX0KA==}
+  mapbox-gl@3.18.1:
+    resolution: {integrity: sha512-Izc8dee2zkmb6Pn9hXFbVioPRLXJz1OFUcrvri69MhFACPU4bhLyVmhEsD9AyW1qOAP0Yvhzm60v63xdMIHPPw==}
 
-  martinez-polygon-clipping@0.7.4:
-    resolution: {integrity: sha512-jBEwrKtA0jTagUZj2bnmb4Yg2s4KnJGRePStgI7bAVjtcipKiF39R4LZ2V/UT61jMYWrTcBhPazexeqd6JAVtw==}
+  martinez-polygon-clipping@0.8.1:
+    resolution: {integrity: sha512-9PLLMzMPI6ihHox4Ns6LpVBLpRc7sbhULybZ/wyaY8sY3ECNe2+hxm1hA2/9bEEpRrdpjoeduBuZLg2aq1cSIQ==}
 
   math-intrinsics@1.1.0:
     resolution: {integrity: sha512-/IXtbwEk5HTPyEwyKX6hGkYXxM9nbj64B+ilVJnC/R6B0pH5G4V3b0pVbL7DBj4tkhBAppbQUlf6F6Xl9LHu1g==}
@@ -3986,9 +3986,6 @@ packages:
   tinyglobby@0.2.15:
     resolution: {integrity: sha512-j2Zq4NyQYG5XMST4cbs02Ak8iJUdxRM0XI5QyxXuZOzKOINmWurp3smXu3y5wDcJrptwpSjgXHzIQxR0omXljQ==}
     engines: {node: '>=12.0.0'}
-
-  tinyqueue@1.2.3:
-    resolution: {integrity: sha512-Qz9RgWuO9l8lT+Y9xvbzhPT2efIUIFd69N7eF7tJ9lnQl0iLj1M7peK7IoUGZL9DJHw9XftqLreccfxcQgYLxA==}
 
   tinyqueue@3.0.0:
     resolution: {integrity: sha512-gRa9gwYU3ECmQYv3lslts5hxuIa90veaEcxDYuu3QGOIAEM2mOZkVHp48ANJuu1CURtRdHKUBY5Lm1tHV+sD4g==}
@@ -7812,7 +7809,7 @@ snapshots:
     dependencies:
       tmpl: 1.0.5
 
-  mapbox-gl@3.17.0:
+  mapbox-gl@3.18.1:
     dependencies:
       '@mapbox/jsonlint-lines-primitives': 2.0.2
       '@mapbox/mapbox-gl-supported': 3.0.0
@@ -7833,7 +7830,7 @@ snapshots:
       gl-matrix: 3.4.4
       grid-index: 1.1.0
       kdbush: 4.0.2
-      martinez-polygon-clipping: 0.7.4
+      martinez-polygon-clipping: 0.8.1
       murmurhash-js: 1.0.0
       pbf: 4.0.1
       potpack: 2.1.0
@@ -7841,11 +7838,11 @@ snapshots:
       supercluster: 8.0.1
       tinyqueue: 3.0.0
 
-  martinez-polygon-clipping@0.7.4:
+  martinez-polygon-clipping@0.8.1:
     dependencies:
       robust-predicates: 2.0.4
       splaytree: 0.1.4
-      tinyqueue: 1.2.3
+      tinyqueue: 3.0.0
 
   math-intrinsics@1.1.0: {}
 
@@ -8744,8 +8741,6 @@ snapshots:
     dependencies:
       fdir: 6.5.0(picomatch@4.0.3)
       picomatch: 4.0.3
-
-  tinyqueue@1.2.3: {}
 
   tinyqueue@3.0.0: {}
 
