@@ -23,7 +23,7 @@ RUN pnpm i --frozen-lockfile
 RUN pnpm build
 
 # Stage 2: serve project
-FROM nginx:stable-alpine
+FROM nginx:1.29.5-alpine3.23
 LABEL app="cyl-polen-tracker" stack.binary="nginx" stack.version="stable-alpine"
 
 COPY --from=builder /usr/app/build /usr/share/nginx/html
