@@ -18,7 +18,7 @@ jobs:
       - name: Install dependencies
         run: pnpm i --frozen-lockfile
       - name: Build
-        run: CI=false MAPBOX_TOKEN=${{ secrets.MAPBOX_TOKEN }} pnpm build
+        run: CI=false VITE_MAPBOX_TOKEN=${{ secrets.MAPBOX_TOKEN }} pnpm build
       - name: Deploy to S3
         run: aws s3 sync dist/ s3://${{ secrets.AWS_S3_BUCKET }} --delete
         env:
