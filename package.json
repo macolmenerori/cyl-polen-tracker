@@ -1,6 +1,6 @@
 {
   "name": "cyl-polen-tracker",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Polen level tracker for Castilla y Leon (Spain)",
   "engines": {
     "node": ">=24.0.0"
@@ -8,7 +8,7 @@
   "type": "module",
   "author": "macolmenerori",
   "license": "MIT",
-  "packageManager": "pnpm@10.30.2",
+  "packageManager": "pnpm@10.33.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/macolmenerori/cyl-polen-tracker"
@@ -21,7 +21,8 @@
     "lint": "eslint --fix ./src/",
     "test": "jest",
     "types": "tsc --noEmit",
-    "verify": "pnpm lint && pnpm prettify && pnpm types && pnpm test && pnpm audit --prod && pnpm build"
+    "verify": "pnpm lint && pnpm prettify && pnpm types && pnpm test && pnpm audit --prod && pnpm build",
+    "release": "npx tsx scripts/release.ts"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",
