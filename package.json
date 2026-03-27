@@ -37,7 +37,7 @@
     "mapbox-gl": "^3.20.0",
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
-    "react-i18next": "^16.5.8",
+    "react-i18next": "^16.6.6",
     "styled-components": "^6.3.12",
     "swr": "^2.4.1"
   },
