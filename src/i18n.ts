@@ -24,8 +24,7 @@ if (typeof window !== 'undefined') {
 i18next.use(initReactI18next).init({
   resources,
   fallbackLng: 'es', // Default language Spanish
-  lng: typeof window === 'undefined' ? 'es' : undefined, // Force Spanish during SSG
-  showSupportNotice: false // Disable i18next support notice in console
+  lng: typeof window === 'undefined' ? 'es' : undefined // Force Spanish during SSG
 });
 
 export default i18next;
