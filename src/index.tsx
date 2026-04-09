@@ -2,7 +2,7 @@ import { StrictMode, Suspense } from 'react';
 
 import { ViteReactSSG } from 'vite-react-ssg/single-page';
 
-import './i18n.ts';
+import './i18n';
 
 import { App } from './App';
 
