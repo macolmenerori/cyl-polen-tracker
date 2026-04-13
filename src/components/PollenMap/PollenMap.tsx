@@ -258,10 +258,10 @@ export function PollenMap({ pollenApiData, selectedPollen }: PollenMapProps) {
           >
             <Typography
               variant="subtitle1"
-              textAlign="center"
-              color="text.primary"
               gutterBottom
               sx={{
+                textAlign: 'center',
+                color: 'text.primary',
                 fontWeight: 600,
                 mb: 2
               }}

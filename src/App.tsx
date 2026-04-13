@@ -1,5 +1,3 @@
-import { CssBaseline } from '@mui/material';
-
 import { DatadogRum } from './components/DatadogRum/DatadogRum';
 import { SEOHead } from './components/SEO/SEOHead';
 import { MainLayout } from './ui/MainLayout/MainLayout';
@@ -10,7 +8,6 @@ export function App() {
     <ThemeProvider>
       <DatadogRum />
       <SEOHead />
-      <CssBaseline />
       <MainLayout />
     </ThemeProvider>
   );
