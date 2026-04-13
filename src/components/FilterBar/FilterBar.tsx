@@ -44,8 +44,19 @@ export function FilterBar({ pollenType, setPollenType }: FilterBarProps) {
           borderRadius: 3
         }}
       >
-        <Stack spacing={3} alignItems="center">
-          <Stack direction="row" spacing={2} alignItems="center">
+        <Stack
+          spacing={3}
+          sx={{
+            alignItems: 'center'
+          }}
+        >
+          <Stack
+            direction="row"
+            spacing={2}
+            sx={{
+              alignItems: 'center'
+            }}
+          >
             <FilterAlt
               sx={{
                 color: theme.palette.primary.main,

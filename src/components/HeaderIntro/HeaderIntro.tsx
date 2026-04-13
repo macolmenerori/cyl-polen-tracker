@@ -27,7 +27,11 @@ export function HeaderIntro() {
       }}
     >
       <Container maxWidth="lg" sx={{ position: 'relative', zIndex: 2 }}>
-        <Box textAlign="center">
+        <Box
+          sx={{
+            textAlign: 'center'
+          }}
+        >
           <Typography
             variant="h1"
             sx={{

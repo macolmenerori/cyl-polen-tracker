@@ -17,7 +17,13 @@ export function FooterComponent() {
         paddingBottom: 2
       }}
     >
-      <Stack direction="row" spacing={1} alignItems="center">
+      <Stack
+        direction="row"
+        spacing={1}
+        sx={{
+          alignItems: 'center'
+        }}
+      >
         <CopyrightIcon fontSize="small" />
         <Typography>
           <Link

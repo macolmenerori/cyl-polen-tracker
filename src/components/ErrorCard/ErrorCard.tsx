@@ -9,7 +9,12 @@ type ErrorCardProps = {
 export function ErrorCard({ message, width, height }: ErrorCardProps) {
   return (
     <Box sx={{ width, height, border: '1px solid', borderRadius: '8px', borderColor: 'secondary' }}>
-      <Typography textAlign="center" padding={3}>
+      <Typography
+        sx={{
+          textAlign: 'center',
+          padding: 3
+        }}
+      >
         {message}
       </Typography>
     </Box>
