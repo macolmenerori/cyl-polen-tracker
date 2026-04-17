@@ -1,20 +1,18 @@
 import { useTranslation } from 'react-i18next';
 
-import { Clear, FilterAlt } from '@mui/icons-material';
-import {
-  alpha,
-  Box,
-  FormControl,
-  IconButton,
-  InputAdornment,
-  InputLabel,
-  MenuItem,
-  Paper,
-  Select,
-  Stack,
-  Typography,
-  useTheme
-} from '@mui/material';
+import Clear from '@mui/icons-material/Clear';
+import FilterAlt from '@mui/icons-material/FilterAlt';
+import Box from '@mui/material/Box';
+import FormControl from '@mui/material/FormControl';
+import IconButton from '@mui/material/IconButton';
+import InputAdornment from '@mui/material/InputAdornment';
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import Paper from '@mui/material/Paper';
+import Select from '@mui/material/Select';
+import Stack from '@mui/material/Stack';
+import { alpha, useTheme } from '@mui/material/styles';
+import Typography from '@mui/material/Typography';
 
 import { PollenType } from '@/types/pollen';
 

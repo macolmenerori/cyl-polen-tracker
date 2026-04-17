@@ -1,6 +1,9 @@
 import { useTranslation } from 'react-i18next';
 
-import { Box, Container, Typography, useTheme } from '@mui/material';
+import Box from '@mui/material/Box';
+import Container from '@mui/material/Container';
+import { useTheme } from '@mui/material/styles';
+import Typography from '@mui/material/Typography';
 
 export function HeaderIntro() {
   const { t } = useTranslation();

@@ -2,7 +2,10 @@ import { useTranslation } from 'react-i18next';
 
 import CopyrightIcon from '@mui/icons-material/Copyright';
 import GitHubIcon from '@mui/icons-material/GitHub';
-import { Divider, Link, Stack, Typography } from '@mui/material';
+import Divider from '@mui/material/Divider';
+import Link from '@mui/material/Link';
+import Stack from '@mui/material/Stack';
+import Typography from '@mui/material/Typography';
 
 export function FooterComponent() {
   const { t } = useTranslation();

@@ -1,4 +1,4 @@
-import { PaletteMode } from '@mui/material';
+import type { PaletteMode } from '@mui/material';
 import { createTheme, Theme } from '@mui/material/styles';
 
 // Define the color palette for light mode

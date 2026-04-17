@@ -15,7 +15,7 @@
   },
   "scripts": {
     "dev": "vite-react-ssg dev",
-    "build": "tsx scripts/generate-sitemap.ts && tsc && vite-react-ssg build",
+    "build": "tsx scripts/generate-sitemap.ts && tsc --noEmit && vite-react-ssg build",
     "preview": "vite preview",
     "prettify": "prettier -w --log-level=silent src/",
     "lint": "eslint --fix ./src/",

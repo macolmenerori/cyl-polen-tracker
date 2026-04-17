@@ -29,16 +29,12 @@ export default defineConfig(({ mode }) => {
       port: 3000
     },
 
+    esbuild: isProd ? { drop: ['console', 'debugger'] } : {},
+
     build: {
       outDir: 'dist',
       sourcemap: false,
-      minify: 'terser',
-      terserOptions: {
-        compress: {
-          drop_console: isProd,
-          drop_debugger: isProd
-        }
-      },
+      minify: 'esbuild',
       rollupOptions: {
         output: {
           // Use function-based manualChunks to avoid SSR external module conflicts
