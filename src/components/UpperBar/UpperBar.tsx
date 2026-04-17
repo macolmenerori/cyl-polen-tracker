@@ -1,4 +1,4 @@
-import { Stack } from '@mui/material';
+import Stack from '@mui/material/Stack';
 
 import { LanguageSwitcher } from './LanguageSwitcher/LanguageSwitcher';
 import { ThemeToggle } from './ThemeToggle/ThemeToggle';
