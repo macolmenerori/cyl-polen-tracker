@@ -46,8 +46,7 @@
     "@testing-library/react": "^16.3.2",
     "@testing-library/user-event": "^14.6.1",
     "@types/jest": "^30.0.0",
-    "@types/mapbox-gl": "^3.5.0",
-    "@types/node": "^25.5.2",
+    "@types/node": "^25.6.0",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^5.1.4",
@@ -79,6 +78,8 @@
     "vite-tsconfig-paths": "^6.1.1"
   },
   "pnpm": {
-    "overrides": {}
+    "overrides": {
+      "protocol-buffers-schema": "3.6.1"
+    }
   }
 }
