@@ -2,6 +2,7 @@ import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 
 import { CurrentPollenLevels } from '@/components/CurrentPollenLevels/CurrentPollenLevels';
+import { CustomCookieConsent } from '@/components/CustomCookieConsent/CustomCookieConsent';
 import { FooterComponent } from '@/components/FooterComponent/FooterComponent';
 import { HeaderIntro } from '@/components/HeaderIntro/HeaderIntro';
 import { UpperBar } from '@/components/UpperBar/UpperBar';
@@ -23,6 +24,8 @@ export function MainLayout() {
       <Box component="footer" sx={{ mt: 'auto', py: 4 }}>
         <FooterComponent />
       </Box>
+
+      <CustomCookieConsent />
     </Box>
   );
 }

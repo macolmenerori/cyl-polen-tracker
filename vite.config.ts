@@ -58,11 +58,11 @@ export default defineConfig(({ mode }) => {
     publicDir: 'public',
 
     optimizeDeps: {
-      include: ['react', 'react-dom', 'mapbox-gl', '@mui/material']
+      include: ['react', 'react-dom', 'mapbox-gl', '@mui/material', 'react-cookie-consent']
     },
 
     ssr: {
-      noExternal: ['react-helmet-async', '@macolmenerori/component-library']
+      noExternal: ['react-helmet-async', '@macolmenerori/component-library', 'react-cookie-consent']
     },
 
     ssgOptions: {
