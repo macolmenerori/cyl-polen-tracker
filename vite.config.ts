@@ -19,6 +19,17 @@ export default defineConfig(({ mode }) => {
       __APP_VERSION__: JSON.stringify(pkg.version)
     },
 
+    resolve: {
+      alias: {
+        // MUI v9.1.0 imports 'react-transition-group/TransitionGroupContext' (bare subpath).
+        // RTG 4.x has no `exports` field so Node ESM can't resolve directory imports.
+        // Alias to the explicit ESM file; ssr.noExternal ensures the server build
+        // routes MUI through Vite's resolver where this alias applies.
+        'react-transition-group/TransitionGroupContext':
+          'react-transition-group/esm/TransitionGroupContext.js'
+      }
+    },
+
     server: {
       port: 3000,
       open: false,
@@ -62,7 +73,12 @@ export default defineConfig(({ mode }) => {
     },
 
     ssr: {
-      noExternal: ['react-helmet-async', '@macolmenerori/component-library', 'react-cookie-consent']
+      noExternal: [
+        'react-helmet-async',
+        '@macolmenerori/component-library',
+        'react-cookie-consent',
+        '@mui/material'
+      ]
     },
 
     ssgOptions: {
