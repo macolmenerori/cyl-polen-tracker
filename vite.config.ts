@@ -40,14 +40,13 @@ export default defineConfig(({ mode }) => {
       port: 3000
     },
 
-    esbuild: isProd ? { drop: ['console', 'debugger'] } : {},
-
     build: {
       outDir: 'dist',
       sourcemap: false,
-      minify: 'esbuild',
-      rollupOptions: {
+      minify: 'oxc',
+      rolldownOptions: {
         output: {
+          minify: isProd ? { compress: { dropConsole: true, dropDebugger: true } } : undefined,
           // Use function-based manualChunks to avoid SSR external module conflicts
           manualChunks: (id) => {
             // Only apply chunking for node_modules during client build
