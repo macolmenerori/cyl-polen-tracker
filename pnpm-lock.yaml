@@ -36,8 +36,8 @@ importers:
         specifier: ^8.2.1
         version: 8.2.1
       mapbox-gl:
-        specifier: ^3.28.0
-        version: 3.28.0
+        specifier: ^3.28.1
+        version: 3.28.1
       react:
         specifier: ^19.2.8
         version: 19.2.8
@@ -3239,8 +3239,8 @@ packages:
   makeerror@1.0.12:
     resolution: {integrity: sha512-JmqCvUhmt43madlpFzG4BQzG2Z3m6tvQDNKdClZnO3VbIudJYmxsT0FNJMeiB2+JTSlTQTSbU8QdesVmwJcmLg==}
 
-  mapbox-gl@3.28.0:
-    resolution: {integrity: sha512-WEbvl2ju0MUZ+R83HeCosmJBTyYdhmFcajeQ7kwLyJ0EHUw9YG/k2QLcMmAQ8sXZpkWq1BbmfjT5lh/oInOnCw==}
+  mapbox-gl@3.28.1:
+    resolution: {integrity: sha512-f8bCHFzZ51bKig7rnD7e08aoFLOV3MNFZduspZ4lgOgiaNVp9sw4NSWcgo3IWTyekYKKXjiICD2BP2o4DiYfxw==}
 
   math-intrinsics@1.1.0:
     resolution: {integrity: sha512-/IXtbwEk5HTPyEwyKX6hGkYXxM9nbj64B+ilVJnC/R6B0pH5G4V3b0pVbL7DBj4tkhBAppbQUlf6F6Xl9LHu1g==}
@@ -7920,7 +7920,7 @@ snapshots:
     dependencies:
       tmpl: 1.0.5
 
-  mapbox-gl@3.28.0: {}
+  mapbox-gl@3.28.1: {}
 
   math-intrinsics@1.1.0: {}
 
