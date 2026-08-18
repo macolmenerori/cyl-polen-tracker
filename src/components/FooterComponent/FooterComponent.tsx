@@ -30,7 +30,7 @@ export function FooterComponent() {
         <CopyrightIcon fontSize="small" />
         <Typography>
           <Link
-            href="https://miguelangelcolmenero.es/"
+            href="https://miguelcolmenero.net/"
             target="_blank"
             rel="noopener"
             sx={{ color: 'text.primary' }}

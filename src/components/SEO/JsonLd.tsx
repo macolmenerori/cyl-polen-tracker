@@ -9,7 +9,7 @@ import { useTranslation } from 'react-i18next';
  * - BreadcrumbList: Improves SERP appearance
  */
 
-const SITE_URL = 'https://cylpolentracker.miguelangelcolmenero.es/';
+const SITE_URL = 'https://cylpolentracker.miguelcolmenero.net/';
 
 interface WebSiteSchema {
   '@context': string;

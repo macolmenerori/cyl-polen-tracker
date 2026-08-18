@@ -2,7 +2,7 @@
 
 Useful web application to track the pollen levels in Castilla y León (Spain).
 
-Check it out at [cylpolentracker.miguelangelcolmenero.es](cylpolentracker.miguelangelcolmenero.es)
+Check it out at [cylpolentracker.miguelcolmenero.net](cylpolentracker.miguelcolmenero.net)
 
 ## Requirements
 
@@ -27,7 +27,7 @@ Easiest way to set up the project to use it right away.
 docker build -t cyl-polen-tracker:latest .
 ```
 
-3. Run the Docker image
+1. Run the Docker image
 
 ```
 docker run --env-file .env -p 3000:3000 --name cyl-polen-tracker cyl-polen-tracker
