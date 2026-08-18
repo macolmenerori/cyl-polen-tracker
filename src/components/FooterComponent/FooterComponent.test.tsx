@@ -16,7 +16,7 @@ describe('FooterComponent', () => {
     expect(screen.getByText(currentYear)).toBeInTheDocument();
 
     const profileLink = screen.getByRole('link', { name: 'macolmenerori' });
-    expect(profileLink).toHaveAttribute('href', 'https://miguelangelcolmenero.es/');
+    expect(profileLink).toHaveAttribute('href', 'https://miguelcolmenero.net/');
     expect(profileLink).toHaveAttribute('target', '_blank');
     expect(profileLink).toHaveAttribute('rel', 'noopener');
 

@@ -6,4 +6,4 @@ Allow: /
 Crawl-delay: 1
 
 # Sitemap location
-Sitemap: https://cylpolentracker.miguelangelcolmenero.es/sitemap.xml
+Sitemap: https://cylpolentracker.miguelcolmenero.net/sitemap.xml

@@ -2,13 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://cylpolentracker.miguelangelcolmenero.es/</loc>
-    <lastmod>2026-08-11</lastmod>
+    <loc>https://cylpolentracker.miguelcolmenero.net/</loc>
+    <lastmod>2026-08-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
     <!-- Language alternates for multi-language support -->
-    <xhtml:link rel="alternate" hreflang="es" href="https://cylpolentracker.miguelangelcolmenero.es/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://cylpolentracker.miguelangelcolmenero.es/?lang=en" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://cylpolentracker.miguelangelcolmenero.es/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://cylpolentracker.miguelcolmenero.net/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://cylpolentracker.miguelcolmenero.net/?lang=en" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cylpolentracker.miguelcolmenero.net/" />
   </url>
 </urlset>
