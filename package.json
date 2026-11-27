@@ -31,7 +31,7 @@
     "@macolmenerori/component-library": "^1.5.1",
     "@mui/icons-material": "^9.6.0",
     "@mui/material": "^9.6.0",
-    "i18next": "^27.2.2",
+    "i18next": "^27.2.9",
     "i18next-browser-languagedetector": "^8.3.1",
     "mapbox-gl": "^3.36.0",
     "react": "^19.3.1",
